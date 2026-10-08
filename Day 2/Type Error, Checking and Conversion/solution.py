@@ -9,7 +9,6 @@ print(type("abc"))
 print(type(123))
 print(type(3.14))
 print(type(True))
-
 # Type Conversion
 str()
 int()
@@ -23,3 +22,4 @@ print(type("Number of letters in your name: "))  # str
 print(type(length_of_name))  # int
 
 print("Number of letters in your name: " + str(length_of_name))
+
