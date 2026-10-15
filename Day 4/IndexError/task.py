@@ -6,4 +6,11 @@ states_of_america = ["Delaware", "Pennsylvania", "New Jersey", "Georgia", "Conne
                      "North Dakota", "South Dakota", "Montana", "Washington", "Idaho", "Wyoming", "Utah", "Oklahoma",
                      "New Mexico", "Arizona", "Alaska", "Hawaii"]
 
-print(states_of_america)
+#print(states_of_america)
+
+# nested list
+fruits = ["Cherry", "Apple", "Pear"]
+vegetables = ["Cucumber", "Kale", "Spinnach"]
+fruits_and_veggies = [fruits, vegetables]
+print(fruits_and_veggies)
+print(fruits_and_veggies[0][1])
