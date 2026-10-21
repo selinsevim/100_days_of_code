@@ -1,4 +1,3 @@
-
 chosen_word = "araba"
 letter = "a"
 placeholder = list("-----")
