@@ -21,26 +21,16 @@ def operation(first_number, second_number, math_operation):
     print(f"Result is output: {output_opt}")
     return output_opt
 
-output = 0
-
 while True:
     first = float(input("Type the first number\n"))
-    math_opt = input("Type a mathematical operator (a choice of +, -, * or /)\n")
-    second = float(input("Type the second number\n"))
-    output = operation(first, second, math_opt)
-    answer = input("Do you want to continue from the previous result? Type yes or no\n")
-
-    while answer == "yes":
+    while True:
         math_opt = input("Type a mathematical operator (a choice of +, -, * or /)\n")
         second = float(input("Type the second number\n"))
-        output = operation(output, second, math_opt)
+        output = operation(first, second, math_opt)
         print(output)
         answer = input("Do you want to continue from the previous result? Type yes or no\n")
-        continue_opt = "yes"
+
         if answer == "no":
-            first = float(input("Type the first number\n"))
-            math_opt = input("Type a mathematical operator (a choice of +, -, * or /)\n")
-            second = float(input("Type the second number\n"))
-            output = operation(first, second, math_opt)
-            answer = input("Do you want to continue from the previous result? Type yes or no\n")
-            continue_opt = "no"
+            break
+        else:
+            first = output
