@@ -80,7 +80,6 @@ while True:
                         game_over = True
                 if get_another_card == 'n':
                     users_turn = False
-                    user_cards = user_cards
                     print("It is computers turn")
                     print("User said no, user cards are", user_cards)
 
