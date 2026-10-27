@@ -91,7 +91,6 @@ while True:
                 total_computer_cards = calculate_scores(computer_cards)
                 print("Computer cards are:", computer_cards)
                 print("Total computer score: ", total_computer_cards)
-                game_over = False
 
             if not game_over:
                 # Compare the cards
