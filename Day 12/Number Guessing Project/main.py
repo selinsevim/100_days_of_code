@@ -61,7 +61,7 @@ while True:
         counter_hard = 5
         game_over = False  # global variable
 
-        chosen_number = random.randint(0, 100)
+        chosen_number = random.randint(1, 100)
         print("Number is:", chosen_number)
 
         answer = input("Choose a difficulty. Type 'easy' or 'hard': ")
