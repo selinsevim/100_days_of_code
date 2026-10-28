@@ -13,70 +13,43 @@ print(art.logo)
 # else say it is too high
 # when the user predicts restart the game
 
-def compare(chosen, user, level):
-    global game_over, counter_easy, counter_hard
-    if level == "easy":
-        if user > chosen:
-            print("Too high")
-            print("Guess again")
-            counter_easy -= 1
-            print(f"You have {counter_easy} attempts remaining to guess the number.")
-        if user < chosen:
-            print("Too low")
-            print("Guess again")
-            counter_easy -= 1
-            print(f"You have {counter_easy} attempts remaining to guess the number.")
-        if user == chosen:
-            print(f"You got it! The answer was {chosen}.")
-            game_over = True
-        if counter_easy == 0 and not game_over:
-            print(f"You lost it!.")
-            game_over = True
-    if level == "hard":
-        if user > chosen:
-            print("Too high")
-            print("Guess again")
-            counter_hard -= 1
-            print(f"You have {counter_hard} attempts remaining to guess the number.")
-        if user < chosen:
-            print("Too low")
-            print("Guess again")
-            counter_hard -= 1
-            print(f"You have {counter_hard} attempts remaining to guess the number.")
-        if user == chosen:
-            print(f"You got it! The answer was {chosen}.")
-            game_over = True
-        if counter_hard == 0 and not game_over:
-            print(f"You lost it!.")
-            game_over = True
+EASY_ATTEMPT_COUNTER = 10
+HARD_ATTEMPT_COUNTER = 5
+game_over = False
 
-
-new_game = True
+def choose_level():
+    answer = input("Choose a difficulty. Type 'easy' or 'hard': ")
+    if answer == "easy":
+        return EASY_ATTEMPT_COUNTER
+    if answer == "hard":
+        return HARD_ATTEMPT_COUNTER
 
 while True:
     print("Welcome to the Number Guessing Game! I'm thinking of a number between 1 and 100.")
 
-    while new_game:
-        counter_easy = 10
-        counter_hard = 5
-        game_over = False  # global variable
+    chosen_number = random.randint(1, 100)
+    print("Number is:", chosen_number)
 
-        chosen_number = random.randint(1, 100)
-        print("Number is:", chosen_number)
+    counter = choose_level()
 
-        answer = input("Choose a difficulty. Type 'easy' or 'hard': ")
-
-        if answer == "easy":
-
-            while counter_easy > 0 and not game_over:
-                user_variable_easy = int(input("Make a guess: "))
-                compare(chosen_number, user_variable_easy, "easy")
-
-        if answer == "hard":
-
-            while counter_hard > 0 and not game_over:
-                user_variable_hard = int(input("Make a guess: "))
-                compare(chosen_number, user_variable_hard, "hard")
+    while counter > 0 and not game_over:
+        user_guess = int(input("Make a guess: "))
+        if user_guess > chosen_number:
+            print("Too high")
+            print("Guess again")
+            counter -= 1
+            print(f"You have {counter} attempts remaining to guess the number.")
+        if user_guess < chosen_number:
+            print("Too low")
+            print("Guess again")
+            counter -= 1
+            print(f"You have {counter} attempts remaining to guess the number.")
+        if user_guess == chosen_number:
+            print(f"You got it! The answer was {chosen_number}.")
+            game_over = True
+        if counter == 0 and not game_over:
+            print(f"You lost it!.")
+            game_over = True
 
 
 
