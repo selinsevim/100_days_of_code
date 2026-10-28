@@ -15,7 +15,6 @@ print(art.logo)
 
 EASY_ATTEMPT_COUNTER = 10
 HARD_ATTEMPT_COUNTER = 5
-game_over = False
 
 def choose_level():
     answer = input("Choose a difficulty. Type 'easy' or 'hard': ")
@@ -24,32 +23,40 @@ def choose_level():
     if answer == "hard":
         return HARD_ATTEMPT_COUNTER
 
-while True:
-    print("Welcome to the Number Guessing Game! I'm thinking of a number between 1 and 100.")
-
-    chosen_number = random.randint(1, 100)
-    print("Number is:", chosen_number)
-
-    counter = choose_level()
-
-    while counter > 0 and not game_over:
-        user_guess = int(input("Make a guess: "))
-        if user_guess > chosen_number:
-            print("Too high")
-            print("Guess again")
-            counter -= 1
-            print(f"You have {counter} attempts remaining to guess the number.")
-        if user_guess < chosen_number:
-            print("Too low")
-            print("Guess again")
-            counter -= 1
-            print(f"You have {counter} attempts remaining to guess the number.")
-        if user_guess == chosen_number:
-            print(f"You got it! The answer was {chosen_number}.")
-            game_over = True
-        if counter == 0 and not game_over:
-            print(f"You lost it!.")
-            game_over = True
+def get_guess():
+    while True:
+        try:
+            return int(input("Make a guess: "))
+        except ValueError:
+            print("Please enter a whole number.")
 
 
+def play():
+    while True:
+        print("Welcome to the Number Guessing Game! I'm thinking of a number between 1 and 100.")
+
+        chosen_number = random.randint(1, 100)
+        # print("Number is:", chosen_number)
+
+        counter = choose_level()
+
+        while counter > 0:
+            user_guess = get_guess()
+            if user_guess > chosen_number:
+                print("Too high")
+                print("Guess again")
+                counter -= 1
+                print(f"You have {counter} attempts remaining to guess the number.")
+            elif user_guess < chosen_number:
+                print("Too low")
+                print("Guess again")
+                counter -= 1
+                print(f"You have {counter} attempts remaining to guess the number.")
+            else:
+                print(f"You got it! The answer was {chosen_number}.")
+                break
+
+        print(f"You lost it!.")
+
+play()
 
