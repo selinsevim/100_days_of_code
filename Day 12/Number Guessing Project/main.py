@@ -17,11 +17,13 @@ EASY_ATTEMPT_COUNTER = 10
 HARD_ATTEMPT_COUNTER = 5
 
 def choose_level():
-    answer = input("Choose a difficulty. Type 'easy' or 'hard': ")
-    if answer == "easy":
-        return EASY_ATTEMPT_COUNTER
-    if answer == "hard":
-        return HARD_ATTEMPT_COUNTER
+    while True:
+        answer = input("Choose a difficulty. Type 'easy' or 'hard': ")
+        if answer == "easy":
+            return EASY_ATTEMPT_COUNTER
+        if answer == "hard":
+            return HARD_ATTEMPT_COUNTER
+        print("Please write easy or hard")
 
 def get_guess():
     while True:
@@ -45,18 +47,19 @@ def play():
             if user_guess > chosen_number:
                 print("Too high")
                 print("Guess again")
-                counter -= 1
-                print(f"You have {counter} attempts remaining to guess the number.")
+
             elif user_guess < chosen_number:
                 print("Too low")
                 print("Guess again")
-                counter -= 1
-                print(f"You have {counter} attempts remaining to guess the number.")
             else:
                 print(f"You got it! The answer was {chosen_number}.")
                 break
 
-        print(f"You lost it!.")
+            counter -= 1
+            print(f"You have {counter} attempts remaining to guess the number.")
+            if counter == 0:
+                print(f"You lost it!.")
+                break
 
 play()
 
