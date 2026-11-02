@@ -4,7 +4,6 @@
 # compare the former higher one, with the new one from the dictionary
 # keep going until the user answers the correct one
 # for each correct answer give +1 score to the user
-# for each incorrect one take -1 from the scores
 # the game is over when the user gives incorrect answer = lower answer
 
 # the higher one becomes the value A after it is selected even though it starts as B
@@ -29,7 +28,6 @@ def compare(value_1, value_2):
         return "B"
 
 def find_the_higher_one(value_1, value_2):
-    global value_A
     follower_count_1 = int(value_1['follower_count'])
     follower_count_2 = int(value_2['follower_count'])
     # compare the numbers, find the higher one
@@ -80,9 +78,8 @@ game_over = False
 value_A, value_B = select_items(data_collection)
 correct_answer = compare(value_A, value_B)
 
-
 while not game_over:
-    user_answer = input("Who has more followers? Type 'A' or 'B'\n")
+    user_answer = input("Who has more followers? Type 'A' or 'B'\n").upper()
 
     if correct_answer == user_answer :
         
@@ -97,6 +94,7 @@ while not game_over:
         value_A = find_the_higher_one(value_A, value_B)
         value_B = reselect_items(data_collection, value_A)
         correct_answer = compare(value_A, value_B)
+        game_over = False
 
     else:
         print("Game is over. Your score is: ", score)
