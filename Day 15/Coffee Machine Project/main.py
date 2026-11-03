@@ -59,7 +59,7 @@ def check_resource_sufficieny(coffee_type):
         str: "enough" if all required ingredients are available,
              otherwise "not enough".
     """
-    if coffee_type == "cappuccino" and coffee_type == "latte":
+    if coffee_type == "cappuccino" or coffee_type == "latte":
         if resources["water"] < MENU[coffee_type]["ingredients"]["water"]:
             print("Sorry there is not enough water.")
             return "not enough"
@@ -106,14 +106,16 @@ def insert_coins(coffee_type):
     # quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01
     total_sum_paid = 0.25 * quarters + 0.10 * dimes + 0.05 * nickles + 0.01 * pennies
     cost_of_coffee = MENU[coffee_type]["cost"]
-    if total_sum_paid > cost_of_coffee:
+    if total_sum_paid >= cost_of_coffee:
         change = total_sum_paid - cost_of_coffee
+        change = round(change, 2)
         print(f"Here is ${change} in change.")
         resources["money"] += cost_of_coffee
         print("Money is $", resources["money"])
         deduct_ingredients(coffee_type=coffee_type)
+        print(f"Here is your {coffee_type}. Enjoy!")
     elif total_sum_paid < cost_of_coffee:
-        print(f"Total inserted money: $", total_sum_paid)
+        print("Total inserted money: $", round(total_sum_paid, 2))
         print("Sorry that's not enough money. Money refunded.")
 
 
@@ -128,7 +130,7 @@ def deduct_ingredients(coffee_type):
     Args:
         coffee_type (str): The selected coffee type.
     """
-    if coffee_type == "cappuccino" and coffee_type == "latte":
+    if coffee_type == "cappuccino" or coffee_type == "latte":
         resources["water"] = (
             resources["water"] - MENU[coffee_type]["ingredients"]["water"]
         )
@@ -166,14 +168,11 @@ while not is_machine_off:
         resource = check_resource_sufficieny("latte")
         if resource == "enough":
             insert_coins("latte")
-            print(f"Here is your latte. Enjoy!")
     elif user_request == "cappuccino":
         resource = check_resource_sufficieny("cappuccino")
         if resource == "enough":
             insert_coins("cappuccino")
-            print(f"Here is your cappuccino. Enjoy!")
     elif user_request == "espresso":
         resource = check_resource_sufficieny("espresso")
         if resource == "enough":
             insert_coins("espresso")
-            print(f"Here is your espresso. Enjoy!")
