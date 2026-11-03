@@ -1,8 +1,3 @@
-# TODO 6: then the program should prompt the user to insert coins
-# TODO 7: quarters = $0.25, dimes = $0.10, nickles = $0.05, pennies = $0.01 -> here calculate the money inserted
-# TODO 8: Check transaction successful
-# TODO 9: Make Coffee
-
 MENU = {
     "espresso": {
         "ingredients": {
@@ -37,6 +32,13 @@ resources = {
 
 
 def print_report():
+    """
+    Prints the current status of the coffee machine.
+
+    Displays the remaining quantities of water, milk, and coffee,
+    as well as the total amount of money collected.
+    Initializes the money resource to 0 if it does not exist.
+    """
     print("Water: ", resources["water"])
     print("Milk: ", resources["milk"])
     print("Coffee: ", resources["coffee"])
@@ -45,8 +47,18 @@ def print_report():
     print("Money: ", resources["money"])
 
 
-# TODO 4: Check resources sufficient?
 def check_resource_sufficieny(coffee_type):
+    """
+    Checks whether the machine has enough ingredients
+    to prepare the selected coffee.
+
+    Args:
+        coffee_type (str): The selected coffee type.
+
+    Returns:
+        str: "enough" if all required ingredients are available,
+             otherwise "not enough".
+    """
     if coffee_type == "cappuccino" and coffee_type == "latte":
         if resources["water"] < MENU[coffee_type]["ingredients"]["water"]:
             print("Sorry there is not enough water.")
@@ -72,8 +84,20 @@ def check_resource_sufficieny(coffee_type):
             return "enough"
 
 
-# TODO 5: Process coins - If there are sufficient resources to make the drink selected,
 def insert_coins(coffee_type):
+    """
+    Handles the payment process for the selected coffee.
+
+    Collects coins from the customer, calculates the total
+    payment, compares it with the coffee price, calculates
+    change if necessary, and updates the machine's money balance.
+
+    If payment is sufficient, calls deduct_ingredients()
+    to update the available resources.
+
+    Args:
+        coffee_type (str): The selected coffee type.
+    """
     print("Please insert coins.")
     quarters = int(input("how many quarters?: "))
     dimes = int(input("how many dimes?: "))
@@ -94,6 +118,16 @@ def insert_coins(coffee_type):
 
 
 def deduct_ingredients(coffee_type):
+    """
+    Deducts the required ingredients from the machine's resources
+    after a successful coffee purchase.
+
+    Retrieves the ingredient quantities from MENU, subtracts
+    them from the available resources, and prints an updated report.
+
+    Args:
+        coffee_type (str): The selected coffee type.
+    """
     if coffee_type == "cappuccino" and coffee_type == "latte":
         resources["water"] = (
             resources["water"] - MENU[coffee_type]["ingredients"]["water"]
@@ -119,14 +153,11 @@ resources["money"] = 0
 # while there is enough resources, run the coffee machine
 # while not resources["water"] == 0 and not resources["milk"] == 0 and not resources["coffee"] == 0 and not is_machine_off:
 while not is_machine_off:
-    # TODO 1: Prompt user by asking “ What would you like? (espresso/latte/cappuccino): ”
     user_request = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
-    # TODO 3: Print report - how much milk, coffee etc
     if user_request == "report":
         print_report()
 
-    # TODO 2: Turn off the Coffee Machine by entering “ off ” to the prompt. - code should stop executing
     elif user_request == "off":
         print("Coffee machine is off.")
         is_machine_off = True
