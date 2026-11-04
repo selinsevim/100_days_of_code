@@ -13,7 +13,6 @@ make_coffee = CoffeeMaker()
 menu_opt = Menu()
 money_opt = MoneyMachine()
 
-print(menu_opt.find_drink("latte"))
 
 while not is_machine_off:
     user_request = input("What would you like? (espresso/latte/cappuccino): ").lower()
@@ -25,4 +24,25 @@ while not is_machine_off:
         print("latte ingredients are", latte.ingredients)
         if latte:
             if make_coffee.is_resource_sufficient(latte):
-                money_opt.process_coins()
+                latte_cost = latte.cost
+                money_opt.make_payment(latte_cost)
+                money_opt.report()
+                make_coffee.make_coffee(latte)
+    elif user_request == "cappuccino":
+        cappuccino = menu_opt.find_drink("cappuccino")
+        print("cappuccino ingredients are", cappuccino.ingredients)
+        if cappuccino:
+            if make_coffee.is_resource_sufficient(cappuccino):
+                cappuccino_cost = cappuccino.cost
+                money_opt.make_payment(cappuccino_cost)
+                money_opt.report()
+                make_coffee.make_coffee(cappuccino)
+    elif user_request == "espresso":
+        espresso = menu_opt.find_drink("espresso")
+        print("espresso ingredients are", espresso.ingredients)
+        if espresso:
+            if make_coffee.is_resource_sufficient(espresso):
+                espresso_cost = espresso.cost
+                money_opt.make_payment(espresso_cost)
+                money_opt.report()
+                make_coffee.make_coffee(espresso)
