@@ -30,7 +30,10 @@ class QuizBrain:
         if user_answer_item == correct_answer_item:
             self.score += 1
             print("You are correct.")
-            print(f"Your score is {self.score}")
+        else:
+            print("You are wrong")
+        print(f"Your score is {self.score}/{self.question_number}")
+        print("\n")
 
     def still_has_questions(self):
         """
