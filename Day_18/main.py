@@ -15,11 +15,22 @@ turtle.color("CornflowerBlue")
 #     turtle.right(90)
 
 # Draw a dashed line
-for _ in range(20):
-    turtle.forward(10)
-    turtle.penup()
-    turtle.forward(10)
-    turtle.pendown()
+# for _ in range(20):
+#     turtle.forward(10)
+#     turtle.penup()
+#     turtle.forward(10)
+#     turtle.pendown()
+
+# Draw a triangle, square, pentagon, hectagon..
+number_of_corners = 3
+colors = ["red", "purple", "blue", "green", "yellow", "orange"]
+while number_of_corners <= 10:
+    for i in range(number_of_corners):
+        turtle.pencolor(colors[number_of_corners % 6])
+        corner_degree = 360 / number_of_corners
+        turtle.right(corner_degree)
+        turtle.forward(100)
+    number_of_corners += 1
 
 
 # Create the scree so that it only exits when clicked
