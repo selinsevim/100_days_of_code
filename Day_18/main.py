@@ -1,19 +1,18 @@
 from turtle import Turtle, Screen
 
 # Create Turtle object
-timmy_the_turtle = Turtle()
+turtle = Turtle()
 # Change the shape
-timmy_the_turtle.shape("turtle")
+turtle.shape("turtle")
 # Change the color of the turtle
-timmy_the_turtle.color("CornflowerBlue")
-# Move the turtle
-timmy_the_turtle.forward(100)
-# Find the position of the turtle
-print(timmy_the_turtle.position())
-# Turn right
-timmy_the_turtle.right(90)
-# Move the turtle
-timmy_the_turtle.forward(100)
+turtle.color("CornflowerBlue")
+
+# Draw a square
+for move in range(4):
+    # Move the turtle
+    turtle.forward(100)
+    # Turn right
+    turtle.right(90)
 
 # Create the scree so that it only exits when clicked
 screen = Screen()
