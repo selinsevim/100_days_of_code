@@ -34,6 +34,11 @@ turtle.color("CornflowerBlue")
 
 import random
 
+# Create the scree so that it only exits when clicked
+screen = Screen()
+
+screen.colormode(255)
+
 angles = [-90, 90, 0, 180]
 colors = [
     "#264653",  # Dark teal
@@ -47,13 +52,20 @@ colors = [
     "#577590",  # Steel blue
     "#F15BB5",  # Pink
 ]
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color_tuple = (r, g, b)
+    return color_tuple
+
+
 for i in range(1000):
-    turtle.pen(pencolor=random.choice(colors), pensize=10)
+    turtle.pen(pencolor=random_color(), pensize=10)
     # turtle.right(random.choice(angles))
     turtle.setheading(random.choice(angles))
     turtle.forward(20)
 
-
-# Create the scree so that it only exits when clicked
-screen = Screen()
 screen.exitonclick()
