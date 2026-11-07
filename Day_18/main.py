@@ -39,19 +39,19 @@ screen = Screen()
 
 screen.colormode(255)
 
-angles = [-90, 90, 0, 180]
-colors = [
-    "#264653",  # Dark teal
-    "#2A9D8F",  # Teal
-    "#8AB17D",  # Sage green
-    "#E9C46A",  # Mustard yellow
-    "#F4A261",  # Soft orange
-    "#E76F51",  # Coral
-    "#D62828",  # Red
-    "#9B5DE5",  # Purple
-    "#577590",  # Steel blue
-    "#F15BB5",  # Pink
-]
+# angles = [-90, 90, 0, 180]
+# colors = [
+#     "#264653",  # Dark teal
+#     "#2A9D8F",  # Teal
+#     "#8AB17D",  # Sage green
+#     "#E9C46A",  # Mustard yellow
+#     "#F4A261",  # Soft orange
+#     "#E76F51",  # Coral
+#     "#D62828",  # Red
+#     "#9B5DE5",  # Purple
+#     "#577590",  # Steel blue
+#     "#F15BB5",  # Pink
+# ]
 
 
 def random_color():
@@ -62,10 +62,23 @@ def random_color():
     return color_tuple
 
 
-for i in range(1000):
-    turtle.pen(pencolor=random_color(), pensize=10)
-    # turtle.right(random.choice(angles))
-    turtle.setheading(random.choice(angles))
-    turtle.forward(20)
+turtle.speed("fastest")
+
+
+def draw_spinograph(add_gap):
+    for i in range(int(360 / add_gap)):
+        turtle.pen(pencolor=random_color())
+        turtle.circle(50)
+        turtle.setheading(turtle.heading() + add_gap)
+
+
+draw_spinograph(30)
+
+# for i in range(1000):
+#     turtle.pen(pencolor=random_color(), pensize=10)
+#     # turtle.right(random.choice(angles))
+#     turtle.setheading(random.choice(angles))
+#     turtle.forward(20)
+
 
 screen.exitonclick()
