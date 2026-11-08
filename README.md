@@ -1,337 +1,216 @@
 
-# 100 Days of Code – Python
+# 100 Days of Python – Learning Dictionary
 
-My journey through Angela Yu's 100 Days of Code: The Complete Python Pro Bootcamp.
+My Python learning journey following Angela Yu's 100 Days of Code.
 
-## Day 1 – Working with Variables in Python
+## Day 1 – Variables
 
-### What I Learned
-- Variables and how to store information.
-- String manipulation.
-- Printing and formatting output.
-- Getting user input with `input()`.
-- Understanding how Python executes code.
+| Concept | Explanation |
+|---|---|
+| Variable | A named container used to store a value. |
+| String | A data type used to represent text. |
+| Input | `input()` collects information entered by the user. |
+| Print | `print()` displays information in the console. |
+| String Concatenation | Combining multiple strings using the `+` operator. |
 
-### Practical Project
-- Band Name Generator.
+## Day 2 – Data Types and Operations
 
-### Key Takeaway
-I learned how variables store information and how input and output work in Python. I wrote my first interactive program.
+| Concept | Explanation |
+|---|---|
+| Integer | A whole number without decimal places. |
+| Float | A number that contains a decimal point. |
+| Boolean | A data type that represents either `True` or `False`. |
+| Type | Defines the kind of data a value represents. |
+| Type Casting | Converting a value from one data type to another. |
+| F-String | A way to insert variables and expressions directly into strings. |
+| Modulo | The `%` operator returns the remainder of a division. |
 
----
+## Day 3 – Control Flow and Logic
 
-## Day 2 – Understanding Data Types and String Manipulation
+| Concept | Explanation |
+|---|---|
+| If Statement | Executes code only when a condition is true. |
+| Elif | Checks another condition when previous conditions are false. |
+| Else | Executes code when none of the previous conditions are true. |
+| Comparison Operators | Compare values using operators such as `==`, `!=`, `>`, and `<`. |
+| Logical Operators | Combine conditions using `and`, `or`, and `not`. |
+| Nested Conditions | Conditional statements placed inside other conditional statements. |
 
-### What I Learned
-- Python primitive data types: strings, integers, floats and booleans.
-- Type checking using `type()`.
-- Type conversion and casting.
-- Mathematical operations.
-- F-Strings for formatting output.
+## Day 4 – Randomisation and Lists
 
-### Practical Project
-- Tip Calculator.
+| Concept | Explanation |
+|---|---|
+| Random Module | A built-in Python module for generating random values. |
+| List | An ordered collection of elements stored in one variable. |
+| Index | The position of an element in a sequence, starting from zero. |
+| Append | Adds a new element to the end of a list. |
+| Nested List | A list that contains other lists as elements. |
+| Random Choice | `random.choice()` selects a random element from a sequence. |
 
-### Key Takeaway
-I learned that different data types behave differently and that type conversion is important when working with user input and calculations.
+## Day 5 – Loops
 
----
+| Concept | Explanation |
+|---|---|
+| For Loop | Repeats a block of code for each item in a sequence. |
+| Range | Generates a sequence of numbers within a specified range. |
+| Iteration | Repeating an operation over a collection of elements. |
+| Sum | Calculates the total of numerical values. |
+| Accumulator | A variable used to keep a running total during iteration. |
 
-## Day 3 – Control Flow and Logical Operators
+## Day 6 – Functions and Code Blocks
 
-### What I Learned
-- Conditional statements: `if`, `elif` and `else`.
-- Comparison operators.
-- Logical operators: `and`, `or` and `not`.
-- Nested conditional statements.
-- Understanding decision-making in programs.
+| Concept | Explanation |
+|---|---|
+| Function | A reusable block of code designed to perform a specific task. |
+| Function Call | Executes a function by using its name followed by parentheses. |
+| Indentation | Defines code blocks and structure in Python. |
+| Code Block | A group of statements that belong to a function or control structure. |
+| Def Keyword | Used to define a function in Python. |
 
-### Practical Project
-- Treasure Island Game.
+## Day 7 – Hangman
 
-### Key Takeaway
-I learned how to control the flow of a program based on conditions and user decisions.
+| Concept | Explanation |
+|---|---|
+| While Loop | Repeats code as long as a condition remains true. |
+| Loop Condition | A Boolean expression that determines whether a loop continues. |
+| Break | Immediately terminates the current loop. |
+| Continue | Skips the remaining code in the current iteration. |
+| State Tracking | Keeping track of changing information during program execution. |
+| String Indexing | Accessing individual characters using their positions. |
 
----
+## Day 8 – Function Parameters and Arguments
 
-## Day 4 – Randomisation and Python Lists
-
-### What I Learned
-- Generating random numbers using the `random` module.
-- Understanding lists and indexing.
-- Accessing and modifying list elements.
-- Working with nested lists.
-- Choosing random items from a list.
-
-### Practical Project
-- Rock Paper Scissors Game.
-
-### Key Takeaway
-I learned how to store multiple values in lists and use randomisation to make programs more interactive.
-
----
-
-## Day 5 – Python Loops
-
-### What I Learned
-- Understanding `for` loops.
-- Using `range()`.
-- Iterating through lists.
-- Calculating totals using loops.
-- Automating repetitive tasks.
-
-### Practical Project
-- Password Generator.
-
-### Key Takeaway
-I learned how loops help reduce repetitive code and allow programs to process multiple values efficiently.
-
----
-
-## Day 6 – Python Functions and Code Blocks
-
-### What I Learned
-- Defining and calling functions.
-- Understanding code blocks and indentation.
-- Using functions to organise code.
-- Passing instructions to functions.
-- Working with Reeborg's World challenges.
-
-### Practical Exercises
-- Reeborg's World maze and hurdle challenges.
-
-### Key Takeaway
-I learned how functions make code reusable and how indentation defines the structure of Python programs.
-
----
-
-## Day 7 – Hangman Game
-
-### What I Learned
-- Combining loops, conditions and lists.
-- Working with strings and indexing.
-- Tracking the player's progress.
-- Using while loops.
-- Managing game states.
-- Breaking a larger problem into smaller steps.
-
-### Practical Project
-- Hangman Game.
-
-### Key Takeaway
-I learned how different Python concepts work together to build a complete interactive program. I also practised problem-solving and debugging.
-
----
-
-## Day 8 – Function Parameters and Caesar Cipher
-
-### What I Learned
-- Function parameters and arguments.
-- Positional and keyword arguments.
-- Understanding how functions receive information.
-- Using functions to organise repeated logic.
-- Working with the Caesar Cipher encryption technique.
-
-### Practical Project
-- Caesar Cipher.
-
-### Key Takeaway
-I learned how to make functions more flexible by passing information into them and how to use loops and indexing to manipulate strings.
-
----
+| Concept | Explanation |
+|---|---|
+| Parameter | A variable defined in a function to receive an input value. |
+| Argument | The actual value passed to a function when it is called. |
+| Positional Argument | An argument assigned to a parameter based on its position. |
+| Keyword Argument | An argument assigned to a parameter using its name. |
+| Default Parameter | A parameter with a predefined value used when no argument is provided. |
+| Caesar Cipher | An encryption technique that shifts letters by a fixed number of positions. |
 
 ## Day 9 – Dictionaries and Nesting
 
-### What I Learned
-- Creating and accessing dictionaries.
-- Working with key-value pairs.
-- Adding and modifying dictionary entries.
-- Looping through dictionaries.
-- Nesting lists and dictionaries.
-
-### Practical Project
-- Secret Auction Program.
-
-### Key Takeaway
-I learned how dictionaries organise related information and how nested data structures help represent more complex information.
-
----
+| Concept | Explanation |
+|---|---|
+| Dictionary | A collection that stores data as key-value pairs. |
+| Key | A unique identifier used to access a dictionary value. |
+| Value | The data associated with a dictionary key. |
+| Key-Value Pair | A relationship between a dictionary key and its corresponding value. |
+| Items | `dict.items()` returns the key-value pairs of a dictionary. |
+| Nested Dictionary | A dictionary containing another dictionary as a value. |
+| Get | `dict.get()` retrieves a value by key and can provide a default if missing. |
 
 ## Day 10 – Functions with Outputs
 
-### What I Learned
-- Returning values from functions using `return`.
-- Understanding the difference between printing and returning.
-- Multiple return statements.
-- Combining functions.
-- Writing reusable and organised code.
+| Concept | Explanation |
+|---|---|
+| Return | Sends a result from a function back to the caller. |
+| Return Value | The output produced by a function. |
+| None | A special Python value representing the absence of a value. |
+| Early Return | Ends a function immediately when a return statement is executed. |
+| Function Composition | Combining functions so that the output of one can be used as the input of another. |
 
-### Practical Project
-- Calculator.
+## Day 11 – Blackjack Project
 
-### Key Takeaway
-I learned how functions can process information and return results that can be used elsewhere in a program.
-
----
-
-## Day 11 – The Blackjack Capstone Project
-
-### What I Learned
-- Combining previous Python concepts.
-- Organising code into functions.
-- Working with lists and randomisation.
-- Implementing game rules and conditions.
-- Managing the state of a game.
-
-### Practical Project
-- Blackjack Game.
-
-### Key Takeaway
-I learned how to combine variables, functions, loops, conditions and lists to create a more complex application.
-
----
+| Concept | Explanation |
+|---|---|
+| Modular Programming | Dividing a program into smaller, independent functions or modules. |
+| Game Logic | Rules and conditions that determine how a game behaves. |
+| Random Selection | Choosing an element randomly from a collection. |
+| Refactoring | Improving code structure without changing its functionality. |
+| Code Reusability | Writing code that can be used multiple times without duplication. |
 
 ## Day 12 – Scope and Number Guessing Game
 
-### What I Learned
-- Understanding local and global scope.
-- Working with local and global variables.
-- Understanding how functions access variables.
-- Using the `global` keyword.
-- Python constants and naming conventions.
+| Concept | Explanation |
+|---|---|
+| Scope | Defines where a variable can be accessed in a program. |
+| Local Variable | A variable defined inside a function that is normally accessible only within it. |
+| Global Variable | A variable defined outside functions that can be accessed throughout the module. |
+| Global Keyword | Allows a function to reassign a global variable. |
+| Constant | A variable intended to remain unchanged, conventionally written in uppercase. |
+| Namespace | A mapping between names and the objects they refer to. |
 
-### Practical Project
-- Number Guessing Game.
+## Day 13 – Debugging
 
-### Key Takeaway
-I learned that variables have different scopes and that understanding where a variable is accessible is important when organising code.
-
----
-
-## Day 13 – Debugging: Finding and Fixing Errors
-
-### What I Learned
-- Identifying common Python errors.
-- Understanding syntax, runtime and logical errors.
-- Using print statements for debugging.
-- Reading error messages and tracebacks.
-- Testing code systematically.
-- Breaking problems into smaller parts.
-
-### Practical Exercises
-- Debugging exercises and fixing existing Python programs.
-
-### Key Takeaway
-I learned that debugging is an essential part of programming. Instead of guessing, I should investigate errors systematically and understand why they happen.
-
----
+| Concept | Explanation |
+|---|---|
+| Debugging | The process of finding and fixing errors in code. |
+| Syntax Error | An error caused by code that does not follow Python's syntax rules. |
+| Runtime Error | An error that occurs while a program is executing. |
+| Logical Error | An error where code runs but produces an incorrect result. |
+| Traceback | An error report showing the sequence of calls that led to an exception. |
+| Print Debugging | Using print statements to inspect variable values and program execution. |
 
 ## Day 14 – Higher Lower Game
 
-### What I Learned
-- Combining functions, dictionaries and lists.
-- Using conditional statements.
-- Managing scores.
-- Working with random selections.
-- Organising a program into smaller functions.
+| Concept | Explanation |
+|---|---|
+| Dictionary Access | Retrieving information using a dictionary key. |
+| Function Decomposition | Breaking a complex task into smaller functions. |
+| Score Tracking | Updating and maintaining a player's score during execution. |
+| Conditional Logic | Using conditions to determine which part of a program executes. |
 
-### Practical Project
-- Higher Lower Game.
+## Day 15 – Coffee Machine
 
-### Key Takeaway
-I learned how to combine multiple Python concepts to build a game with scoring and comparison logic.
+| Concept | Explanation |
+|---|---|
+| Module | A Python file containing reusable code such as functions and classes. |
+| Import | Makes functionality from another module available in the current file. |
+| While Loop | Repeatedly executes code while its condition evaluates to true. |
+| Resource Management | Tracking available resources and updating them when used. |
+| Transaction | A sequence of operations involving payment and resource exchange. |
+| Code Reading | Understanding existing code before modifying or extending it. |
 
----
+## Day 16 – Object-Oriented Programming
 
-## Day 15 – Local Development Environment and Coffee Machine
+| Concept | Explanation |
+|---|---|
+| Object-Oriented Programming (OOP) | A programming approach that organises code around objects containing data and behaviour. |
+| Class | A blueprint used to create objects. |
+| Object | An individual entity created from a class. |
+| Instance | A specific object created from a class. |
+| Attribute | A variable associated with an object or class. |
+| Method | A function defined inside a class. |
+| Constructor | The initialisation process that sets up a new object. |
+| __init__() | A special method called automatically when a new instance is created. |
+| Self | A reference to the current instance inside an instance method. |
 
-### What I Learned
-- Working with Python in VS Code.
-- Understanding the structure of an existing codebase.
-- Using dictionaries to store machine resources.
-- Working with functions and while loops.
-- Managing resources and transactions.
-- Understanding program flow.
+## Day 17 – Quiz Project and OOP
 
-### Practical Project
-- Coffee Machine Program.
+| Concept | Explanation |
+|---|---|
+| Instance Attribute | A variable that stores data specific to an individual object. |
+| Instance Method | A method that operates on an individual instance using `self`. |
+| Object Interaction | Objects communicating by calling each other's methods or accessing attributes. |
+| Class Responsibility | The specific task or role assigned to a class within a program. |
+| Encapsulation | Grouping data and the methods that operate on it within a class. |
 
-### Key Takeaway
-I practised reading and understanding existing code, implementing TODO instructions and using loops and functions to manage a program's behaviour.
+## Day 18 – Turtle Graphics
 
----
+| Concept | Explanation |
+|---|---|
+| Turtle Module | A Python module used to create graphics through movement commands. |
+| Turtle Object | An instance that controls a drawing cursor on the screen. |
+| RGB | A colour model that represents colours using red, green and blue values. |
+| Tuple | An ordered collection of elements that cannot be modified after creation. |
+| Event Listener | A function that responds to a particular event. |
+| Event-Driven Programming | A programming approach where execution responds to events such as clicks or key presses. |
+| Higher-Order Function | A function that accepts another function as an argument or returns a function. |
 
-## Day 16 – Object-Oriented Programming (OOP)
+## Day 19 – Instances, State and Higher-Order Functions
 
-### What I Learned
-- Understanding classes and objects.
-- Creating instances from classes.
-- Understanding attributes and methods.
-- Using constructors with `__init__()`.
-- Understanding the `self` parameter.
-- Organising code using object-oriented programming.
-
-### Practical Project
-- Coffee Machine using Object-Oriented Programming.
-
-### Key Takeaway
-I learned that classes provide blueprints for creating objects and that OOP helps organise code into reusable structures.
-
----
-
-## Day 17 – The Quiz Project and Benefits of OOP
-
-### What I Learned
-- Creating classes and instances.
-- Working with attributes and methods.
-- Understanding how objects interact.
-- Using constructors.
-- Separating responsibilities between classes.
-- Building applications using OOP principles.
-
-### Practical Project
-- Quiz Game.
-
-### Key Takeaway
-I learned how to structure an application using multiple classes and how objects can work together to manage different responsibilities.
-
----
-
-## Day 18 – Turtle Graphics and GUI Programming
-
-### What I Learned
-- Working with the Turtle graphics module.
-- Creating and controlling turtle objects.
-- Understanding RGB colour values.
-- Using loops to draw shapes and patterns.
-- Understanding event-driven programming.
-- Working with the Python `turtle` graphics interface.
-
-### Practical Exercises
-- Drawing geometric shapes.
-- Creating colourful patterns.
-- Working with turtle movement and screen settings.
-
-### Key Takeaway
-I learned how Python can interact with a graphical interface and how loops and functions can be used to create visual output.
-
----
-
-## Day 19 – Instances, State and Higher Order Functions
-
-### What I Learned
-- Understanding objects and instances.
-- Understanding object state.
-- Working with object attributes.
-- Understanding instance-specific data.
-- Passing functions as arguments.
-- Understanding higher-order functions.
-- Working with event listeners.
-
-### Practical Project
-- Turtle Race Game.
-
-### Key Takeaway
-I learned that objects created from the same class can maintain their own independent state. I also explored how functions can be passed as arguments to other functions.
+| Concept | Explanation |
+|---|---|
+| Instance | An individual object created from a class. |
+| State | The current condition of an object, represented by its attributes. |
+| Instance State | The collection of attribute values belonging to a particular instance. |
+| Independent Instances | Multiple objects created from the same class that maintain their own instance attributes. |
+| Function as an Argument | Passing a function to another function so it can be called later. |
+| Higher-Order Function | A function that accepts another function as an argument or returns a function. |
+| Callback | A function passed to another function to be executed in response to an event or action. |
+| Event Listener | A mechanism that waits for a specific event and triggers a callback when it occurs. |
+| Turtle Race | A project that uses multiple turtle instances to simulate a race. |
 
 ---
