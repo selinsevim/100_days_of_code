@@ -16,7 +16,15 @@ coordinates = [(0, 0), (20, 0), (40, 0)]
 
 snake = Snake(coordinates=coordinates, color="white", num_of_segments=3)
 
-snake.create_snake()
+# snake.create_snake()
+
+screen.listen()
+
+screen.onkey(snake.move_up, "Up")
+screen.onkey(snake.move_down, "Down")
+screen.onkey(snake.move_left, "Left")
+screen.onkey(snake.move_right, "Right")
+
 
 is_game_on = True
 
