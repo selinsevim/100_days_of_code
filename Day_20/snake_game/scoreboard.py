@@ -23,3 +23,12 @@ class Scoreboard(Turtle):
             font=("monaco", 10, "bold"),
             align="center",
         )
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write(
+            f"Game Over",
+            move=False,
+            font=("monaco", 20, "bold"),
+            align="center",
+        )
