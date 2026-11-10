@@ -15,7 +15,7 @@ screen.title("My Snake Game")
 screen.tracer(0)
 
 
-snake = Snake(color="white", num_of_segments=3)
+snake = Snake(num_of_segments=3)
 food = Food()
 
 # Create event listeners
@@ -38,29 +38,26 @@ while is_game_on:
     # Detect collision with food
     if snake.head.distance(food) < 15:
         food.move_location_randomly()
-        snake.extend_snake()
         score.increase_score()
+        snake.add_segments()
+        snake.extend_snake()
+        print("num of segments", snake.num_of_segments)
         score.write_score()
 
-    if snake.head.xcor() > 280:
-        is_game_on = False
-        score.game_over()
-
-    elif snake.head.xcor() < -280:
-        is_game_on = False
-        score.game_over()
-
-    elif snake.head.ycor() < -280:
-        is_game_on = False
-        score.game_over()
-
-    elif snake.head.ycor() > 280:
+    if (
+        snake.head.xcor() > 280
+        or snake.head.xcor() < -280
+        or snake.head.ycor() < -280
+        or snake.head.ycor() > 280
+    ):
         is_game_on = False
         score.game_over()
 
     # Detect collision with tail
-    for segment in snake.all_segments[1:]:
-        if snake.head.distance(segment) < 10:
+    for segment in snake.all_segments:
+        if snake.head == segment:
+            pass
+        elif snake.head.distance(segment) < 10:
             is_game_on = False
             score.game_over()
 

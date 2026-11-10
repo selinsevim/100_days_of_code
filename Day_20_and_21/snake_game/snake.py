@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-STARTING_POSITIONS = [(0, 0), (20, 0), (40, 0)]
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 
 MOVE_DISTANCE = 20
 UP = 90
@@ -10,27 +10,31 @@ LEFT = 180
 
 
 class Snake:
-    def __init__(self, color, num_of_segments):
-        self.color = color
+    def __init__(self, num_of_segments):
         self.num_of_segments = num_of_segments
         self.all_segments = []
         self.create_snake()
         self.head = self.all_segments[0]
-        self.tail = self.all_segments[-1]
 
     def create_snake(self):
-        for position in STARTING_POSITIONS:
-            self.add_segments(position)
+        for turtle_index in range(0, self.num_of_segments):
+            segment = Turtle(shape="square")
+            segment.pen(fillcolor="black", pencolor="white")
+            segment.penup()
+            segment.goto(STARTING_POSITIONS[turtle_index])
+            self.all_segments.append(segment)
 
-    def add_segments(self, position):
-        segment = Turtle(shape="square")
-        segment.goto(position)
-        segment.pen(fillcolor="red", pencolor="white")
-        segment.penup()
-        self.all_segments.append(segment)
+    def add_segments(self):
+        self.num_of_segments = self.num_of_segments + 1
+        return self.num_of_segments
 
     def extend_snake(self):
-        self.add_segments(self.all_segments[-1].position())
+        last_segment_position = self.all_segments[-1].position()
+        segment = Turtle(shape="square")
+        segment.pen(fillcolor="black", pencolor="white")
+        segment.penup()
+        segment.goto(last_segment_position)
+        self.all_segments.append(segment)
 
     def move(self):
         for seg_num in range(len(self.all_segments) - 1, 0, -1):
