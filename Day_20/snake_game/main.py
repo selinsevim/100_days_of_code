@@ -14,9 +14,8 @@ screen.title("My Snake Game")
 # Turn off the tracer
 screen.tracer(0)
 
-coordinates = [(0, 0), (20, 0), (40, 0)]
 
-snake = Snake(coordinates=coordinates, color="white", num_of_segments=3)
+snake = Snake(color="white", num_of_segments=3)
 food = Food()
 
 # Create event listeners
@@ -37,8 +36,9 @@ while is_game_on:
     snake.move()
 
     # Detect collision with food
-    if snake.head.distance(food) < 20:
+    if snake.head.distance(food) < 15:
         food.move_location_randomly()
+        snake.extend_snake()
         score.increase_score()
         score.write_score()
 
@@ -57,6 +57,12 @@ while is_game_on:
     elif snake.head.ycor() > 280:
         is_game_on = False
         score.game_over()
+
+    # Detect collision with tail
+    for segment in snake.all_segments[1:]:
+        if snake.head.distance(segment) < 10:
+            is_game_on = False
+            score.game_over()
 
 
 screen.exitonclick()
