@@ -1,0 +1,13 @@
+Structuring of Arcade Game
+1. Controllers for Player 1 and 2 - Have a class for this Player class
+    - Inherits the turtle class (Multiple square turtles)
+    - Single line that moves up and down with keys
+2. Ball class 
+    - Inherits the turtle class (No key controller is needed)
+    - Ball starts from the middle
+    - When the ball touches to the player stick it bounces back to the other side
+3. Scoreboard class
+    - Whoever send the ball to the empty part of the screen gets the point
+4. Setting up the screen
+    - Coordinates 
+    - Two sides seperated with dashed line showing two players
