@@ -65,7 +65,7 @@ while is_game_on:
     # Ball is missed on left side
     if ball.xcor() <= -400:
         # is_game_on = False
-        scoreboard.increase_score()
+        scoreboard.increase_score_left()
         scoreboard.write_score()
         ball.reset_ball_position()
         ball.move_ball_opposing()
@@ -74,7 +74,7 @@ while is_game_on:
     # Ball is missed on right side
     if ball.xcor() >= 400:
         # is_game_on = False
-        scoreboard.increase_score()
+        scoreboard.increase_score_right()
         scoreboard.write_score()
         ball.reset_ball_position()
         ball.move_ball_opposing()
