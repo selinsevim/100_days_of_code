@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
+from ball import Ball
 import time
 
 # Create the screen
@@ -17,6 +18,8 @@ paddle_right = Paddle((350, 0))
 # Create left paddle
 paddle_left = Paddle((-350, 0))
 
+# Create the ball
+ball = Ball()
 
 # Add the event listeners
 screen.listen()
@@ -45,6 +48,11 @@ is_game_on = True
 while is_game_on:
     screen.update()
     time.sleep(0.1)
+    ball.move_ball()
+    if ball.ycor() <= -280 or ball.ycor() >= 280:
+        ball.detect_collision()
+    if ball.xcor() >= 330:
+        ball.bouncing_on_paddle()
 
 
 screen.exitonclick()
