@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 # Create the screen
@@ -20,6 +21,9 @@ paddle_left = Paddle((-350, 0))
 
 # Create the ball
 ball = Ball()
+
+# Create scoreboard
+scoreboard = Scoreboard()
 
 # Add the event listeners
 screen.listen()
@@ -49,7 +53,6 @@ while is_game_on:
     screen.update()
     time.sleep(0.1)
     ball.move_ball()
-    print(ball.distance(paddle_right.pos()))
     if ball.ycor() <= -280 or ball.ycor() >= 280:
         ball.detect_collision()
     if (
@@ -59,6 +62,23 @@ while is_game_on:
         and ball.xcor() <= -330
     ):
         ball.bouncing_on_paddle()
+    # Ball is missed on left side
+    if ball.xcor() <= -400:
+        # is_game_on = False
+        scoreboard.increase_score()
+        scoreboard.write_score()
+        ball.reset_ball_position()
+        ball.move_ball_opposing()
+        screen.update()
+
+    # Ball is missed on right side
+    if ball.xcor() >= 400:
+        # is_game_on = False
+        scoreboard.increase_score()
+        scoreboard.write_score()
+        ball.reset_ball_position()
+        ball.move_ball_opposing()
+        screen.update()
 
 
 screen.exitonclick()
