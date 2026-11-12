@@ -49,9 +49,15 @@ while is_game_on:
     screen.update()
     time.sleep(0.1)
     ball.move_ball()
+    print(ball.distance(paddle_right.pos()))
     if ball.ycor() <= -280 or ball.ycor() >= 280:
         ball.detect_collision()
-    if ball.xcor() >= 330:
+    if (
+        ball.distance(paddle_right.pos()) <= 50
+        and ball.xcor() >= 330
+        or ball.distance(paddle_left.pos()) <= 50
+        and ball.xcor() <= -330
+    ):
         ball.bouncing_on_paddle()
 
 
