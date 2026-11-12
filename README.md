@@ -214,3 +214,64 @@ My Python learning journey following Angela Yu's 100 Days of Code.
 | Turtle Race | A project that uses multiple turtle instances to simulate a race. |
 
 ---
+
+
+## Day 20 – Snake Game: Animation and Coordinates
+
+| Concept | Explanation |
+|---|---|
+| Coordinate System | A system that identifies positions using X and Y coordinates. |
+| X-Axis | The horizontal axis that determines left and right positions. |
+| Y-Axis | The vertical axis that determines up and down positions. |
+| Coordinate | A pair of values `(x, y)` representing a position on a screen. |
+| Screen Setup | Configures the dimensions and appearance of the Turtle graphics window. |
+| Animation | The process of displaying continuous movement by updating an object's position. |
+| Screen Update | `screen.update()` refreshes the screen to display changes made to objects. |
+| Tracer | `screen.tracer(0)` disables automatic screen updates to allow manual animation control. |
+| Time Module | A built-in Python module that provides time-related functionality. |
+| Sleep | `time.sleep()` pauses program execution for a specified number of seconds. |
+| Movement | Changing an object's coordinates to create movement on the screen. |
+
+## Day 21 – Snake Game: Inheritance and List Slicing
+
+| Concept | Explanation |
+|---|---|
+| Inheritance | A mechanism that allows one class to inherit attributes and methods from another class. |
+| Parent Class | A class whose attributes and methods are inherited by another class. |
+| Child Class | A class that inherits attributes and methods from a parent class. |
+| Super | `super()` provides access to methods and functionality from a parent class. |
+| Method Overriding | Defining a method in a child class with the same name as a method in its parent class. |
+| List Slicing | Extracting a portion of a list using the syntax `list[start:stop:step]`. |
+| Negative Indexing | Accessing elements from the end of a sequence using negative indices. |
+| Step | The optional third slicing parameter that determines the interval between selected elements. |
+| Tuple Coordinates | Using tuples to represent fixed coordinate positions. |
+| Direction | Representing movement using directional values such as up, down, left and right. |
+
+## Day 22 – Pong Game
+
+| Concept | Explanation |
+|---|---|
+| Object Inheritance | Reusing functionality from an existing class to create specialised objects. |
+| Collision Detection | Checking whether two objects have touched or overlapped. |
+| Boundary Detection | Checking whether an object has reached the limits of the screen. |
+| Ball Movement | Updating the ball's position using horizontal and vertical movement values. |
+| Velocity | The speed and direction of an object's movement. |
+| Reflection | Reversing a movement direction when an object hits a boundary. |
+| Boolean State | Using `True` or `False` to represent a particular game condition. |
+| Scoreboard | A component responsible for displaying and updating the players' scores. |
+| Game Loop | Repeatedly updating the game state while the game is running. |
+
+## Day 23 – Turtle Crossing Game
+
+| Concept | Explanation |
+|---|---|
+| Object-Oriented Design | Organising a program into classes with separate responsibilities. |
+| Random Movement | Using random values to determine an object's movement or position. |
+| Collision Detection | Detecting when the player comes into contact with another object. |
+| Player Control | Using keyboard events to control the movement of a player object. |
+| Object Generation | Creating new objects dynamically while a program is running. |
+| Difficulty Progression | Increasing the challenge of a game as the player advances. |
+| Level Management | Tracking and updating the current level of a game. |
+| Object Removal | Removing objects from the screen when they are no longer needed. |
+| Game Over Condition | A condition that determines when the game should end. |
+| Class Responsibility | Assigning specific functionality to separate classes to keep code organised. |
