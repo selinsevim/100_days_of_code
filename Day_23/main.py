@@ -24,5 +24,6 @@ while game_is_on:
     if random_number == 6:
         car_manager_system.create_cars()
     car_manager_system.move_cars(STARTING_MOVE_DISTANCE)
+    player.reset_turtle()
 
 screen.exitonclick()
