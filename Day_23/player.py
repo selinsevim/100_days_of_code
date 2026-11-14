@@ -18,5 +18,5 @@ class Player(Turtle):
         self.goto(self.xcor(), new_y)
 
     def reset_turtle(self):
-        if self.ycor() >= 300:
+        if self.ycor() >= 280:
             self.goto(STARTING_POSITION)
