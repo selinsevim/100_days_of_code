@@ -23,7 +23,7 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     all_cars = car_manager_system.all_cars
-
+    # Reduce the chance of creating cars
     random_number = random.randint(1, 6)
     if random_number == 6:
         car_manager_system.create_cars()
