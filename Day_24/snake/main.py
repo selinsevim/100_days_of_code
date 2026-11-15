@@ -1,7 +1,7 @@
 from turtle import Screen
-from Day_24.snake.snake import Snake
-from Day_24.snake.food import Food
-from Day_24.snake.scoreboard import Scoreboard
+from snake import Snake
+from food import Food
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()

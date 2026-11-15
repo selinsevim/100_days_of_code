@@ -22,3 +22,8 @@ with open(r"Day_24/my_file.txt") as file:
 # APPEND INTO THE FILE
 with open(r"Day_24/my_file.txt", mode="a") as file:
     file.write("\nNew text")
+
+# IF THE FILE DOESNT EXIST, AND THE MODE IS WRITE
+# IT WILL CREATE A NEW FILE
+with open(r"Day_24/new_file.txt", mode="w") as file:
+    file.write("New text.")
