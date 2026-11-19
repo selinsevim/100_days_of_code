@@ -22,35 +22,35 @@ import pandas as pd
 data = pd.read_csv(
     "/Users/selinsevim/Documents/100_days_of_code/Day_25/weather_data.csv"
 )
-print(type(data))
-print(type(data["temp"]))
-temperature = data["temp"]
-average_temp = temperature.mean()
-print(average_temp)
-max_value = temperature.max()
-print(max_value)
+# print(type(data))
+# print(type(data["temp"]))
+# temperature = data["temp"]
+# average_temp = temperature.mean()
+# print(average_temp)
+# max_value = temperature.max()
+# print(max_value)
 
-# you treat like list
-print(data["condition"])
-# you treat like object
-print(data.condition)
+# # you treat like list
+# print(data["condition"])
+# # you treat like object
+# print(data.condition)
 
-# Find the row that has Monday as a day
-print(data[data["day"] == "Monday"])
+# # Find the row that has Monday as a day
+# print(data[data["day"] == "Monday"])
 
-# Find the row with the highes temperature
-print(data[data["temp"] == data["temp"].max()])
+# # Find the row with the highes temperature
+# print(data[data["temp"] == data["temp"].max()])
 
 # You can go one step further to get specific column data of the specific row
 monday = data[data["day"] == "Monday"]
-print(type(monday["temp"]))
+print(monday["temp"])
 # since this a series, I can reach the value with indexing
 temp_monday = monday["temp"][0]
 print(temp_monday)
-fahrenheit_monday = temp_monday * 1.8 + 32
-print(fahrenheit_monday)
+# fahrenheit_monday = temp_monday * 1.8 + 32
+# print(fahrenheit_monday)
 
-# Create dataframe from scratch
-data_dict = {"names": ["Selin", "Matthias", "Noah"], "ages": [32, 32, 0]}
-dataframe = pd.DataFrame(data=data_dict)
-print(type(dataframe))
+# # Create dataframe from scratch
+# data_dict = {"names": ["Selin", "Matthias", "Noah"], "ages": [32, 32, 0]}
+# dataframe = pd.DataFrame(data=data_dict)
+# print(type(dataframe))
