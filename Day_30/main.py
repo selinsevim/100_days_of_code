@@ -14,3 +14,4 @@ finally:
     # finally runs no matter what, no matter it succeeds or fails
     file.close()
     print("File is closed")
+    raise TypeError("There is a type error")  # you can raise your own error
