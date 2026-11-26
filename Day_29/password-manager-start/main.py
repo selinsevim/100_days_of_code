@@ -1,7 +1,87 @@
 import tkinter as tk
 from tkinter import messagebox
+import random
+
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+# Password Generator Project
+def generate_password():
+    letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+    ]
+    numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"]
+
+    nr_letters = random.randint(8, 10)
+    nr_symbols = random.randint(2, 4)
+    nr_numbers = random.randint(2, 4)
+
+    password_list_1 = [random.choice(letters) for _ in range(nr_letters)]
+
+    password_list_2 = [random.choice(symbols) for _ in range(nr_symbols)]
+
+    password_list_3 = [random.choice(numbers) for _ in range(nr_numbers)]
+
+    password_list = password_list_1 + password_list_2 + password_list_3
+
+    random.shuffle(password_list)
+
+    password = "".join(password_list)
+
+    # print(f"Your password is: {password}")
+    password_entry.insert(0, password)
+    return password
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -70,7 +150,9 @@ password_entry = tk.Entry(width=20)
 password_entry.grid(row=3, column=1)
 
 # generate button
-generate_button = tk.Button(text="Generate Password", width=12)
+generate_button = tk.Button(
+    text="Generate Password", width=12, command=generate_password
+)
 generate_button.grid(row=3, column=2)
 
 # add button
