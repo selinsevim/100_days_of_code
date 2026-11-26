@@ -14,18 +14,21 @@ def search():
         ) as data_file:  # r -> load(read) and update
             # Read old data from json file
             data = json.load(data_file)
-            # get the entry of website
-            website_request = website_entry.get()
+    except:
+        print("There is no file")
+        messagebox.showinfo(title="Warning", message="There is no file!")
+    else:
+        # get the entry of website
+        website_request = website_entry.get()
+        if website_request in data:
             email = data[website_request]["email"]
             password = data[website_request]["password"]
             messagebox.showinfo(
                 title=website_request,
                 message=f"Email address is {email} and password is {password}",
             )
-
-    except:
-        print("There is no file")
-        messagebox.showinfo(title="Warning", message="There is no file!")
+        else:
+            messagebox.showinfo(title="Warning", message="There is data found!")
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
